@@ -79,7 +79,7 @@ async def process_callback_kb1btn1(callback_query: types.CallbackQuery):
             currect_photo_link = hotel_data['photo'].split('?')[0]
             caption_message = ''
             for keys, data in hotel_data.items():
-                if keys != 'photo':
+                if keys != 'photo' and keys != 'exactCurrent':
                     caption_message += f"{data}\n\n"
             await bot.send_photo(chat_id=callback_query.from_user.id, photo=currect_photo_link, caption=caption_message)
     try:
